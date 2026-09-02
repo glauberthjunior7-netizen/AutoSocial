@@ -144,6 +144,11 @@ async function ensureCreateFlowInput(page) {
   const input = page.locator('input[type="file"]').first();
   if ((await input.count()) > 0) return input;
 
+  console.log("DEBUG: Não encontrou input[type=file] imediatamente.");
+  await page.screenshot({
+  path: "debug-no-input.png",
+  fullPage: true
+}).catch(() => {});
   const createPattern = uiLabels.pattern("create");
   const postFormatPattern = uiLabels.pattern("instagramPostFormat", "instagramReelFormat");
   const createEntryPoints = [
@@ -159,10 +164,13 @@ async function ensureCreateFlowInput(page) {
     const clicked = await clickFirstVisibleEnabledLocator(page, entry);
     if (!clicked) continue;
     console.log("Instagram create entry clicked.");
-    await page.waitForTimeout(1200);
-    if ((await input.count()) > 0) return input;
-  }
 
+await page.screenshot({
+  path: "debug-after-create-click.png",
+  fullPage: true
+}).catch(() => {});
+
+await page.waitForTimeout(1200);
   // Some flows open a chooser first (post/reel/story).
   const formatPickers = [
     ...uiLabels
