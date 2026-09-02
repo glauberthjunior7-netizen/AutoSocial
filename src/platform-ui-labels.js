@@ -4,9 +4,9 @@ const LABELS = {
   instagramPostFormat: ["post", "beitrag"],
   instagramReelFormat: ["reel", "reels"],
   instagramUploadTrigger: ["from computer", "select from computer", "vom computer", "ausw\u00e4hlen"],
-  next: ["next", "weiter"],
+  next: ["next", "avançar", "continuar", "weiter"],
   captionAttribute: ["caption", "beschreib"],
-  share: ["share", "post", "publish", "teilen", "posten"],
+  share: ["share", "post", "publish", "compartilhar", "publicar", "avançar", "teilen", "posten"],
   posted: ["shared", "posted", "geteilt", "ver\u00f6ffentlicht", "beitrag wurde geteilt"],
   error: ["error", "failed", "couldn't", "fehler", "nicht m\u00f6glich", "konnte nicht"],
 
